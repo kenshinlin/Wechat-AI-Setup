@@ -1,6 +1,7 @@
 {
-  "index": "Introduction",
-  "another": "Another Page",
+  "index": "介绍",
+  "getting-started": "快速开始",
+  "config-detail": "详细配置",
   "doc": "Advanced (A Folder)",
   "about": {
     "title": "About",
