@@ -2,15 +2,16 @@
   "index": "介绍",
   "getting-started": "快速开始",
   "config-detail": "详细配置",
-  "doc": "Advanced (A Folder)",
+  "faq": "常见问题",
   "about": {
-    "title": "About",
-    "type": "page"
+    "title": "关于",
+    "type": "page",
+    "href": "https://weai.chat"
   },
   "contact": {
-    "title": "Contact ↗",
+    "title": "联系方式 ↗",
     "type": "page",
-    "href": "https://twitter.com/shuding_",
+    "href": "https://twitter.com/kenshinlin",
     "newWindow": true
   }
 }
