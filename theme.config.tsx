@@ -31,7 +31,7 @@ const config: DocsThemeConfig = {
         locale: "zh_CN",
         url: "https://www.weai.chat",
         site_name: "慢壳 AI",
-        images: "https://www.weai.chat/logo.png",
+        images: [{ url: "https://www.weai.chat/logo.png" }],
       },
       twitter: {
         cardType: "summary_large_image",
