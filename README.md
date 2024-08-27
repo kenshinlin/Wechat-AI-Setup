@@ -51,4 +51,4 @@ Coze 是抖音字节旗下的机器人平台。无需编程即可创建功能强
 
 ## 三、快速上手
 
-[快速上手](./getting-started)
+[快速上手](./pages/getting-started.mdx)
