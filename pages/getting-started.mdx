@@ -4,53 +4,56 @@
 
 软件的使用非常简单，只需要 4 个步骤操作即可：
 
-1. 下载并安装慢壳 AI 软件
+1. 下载并安装软件
 2. 登录微信
-3. 创建机器人
-4. 配置机器人 ID 和 Coze API token
+3. 配置机器人
+4. 测试 AI 是否生效
 
 ## 第一步：下载并安装慢壳 AI 软件
+
+- 系统要求：Windows（最好是 Win11）
+- 安装指定版本的微信客户端（3.9.10.27）
+- 安装慢壳 AI 软件
 
 添加微信获取软件下载链接：
 ![alt text](./assets/scan_code.png)
 
-使用 Windows PC 电脑安装慢壳 AI 软件后，打开软件，界面上有使用的步骤指引，按*指引下载并安装相应的微信客户端版本*
-![alt text](./assets/software_1.jpg)
+也可以自助下载：
+
+- 慢壳 AI 软件: https://pan.baidu.com/s/1tNSghE_O3MeGP1dYGz7nAg?pwd=4cuu
+- 微信客户端(WeChatSetup-3.9.10.27.exe): https://pan.baidu.com/s/1UY-8BIsyBoW3irHGOYRDyw?pwd=a394
 
 ## 第二步：绑定微信
 
-安装好微信客户端后，_使用管理员身份运行微信_，正常登录微信即可。完成后回到慢壳 AI 软件点击 “绑定微信” 按钮（如下图 1），在弹出的窗口中点击确定（如下图 2），即可绑定成功
+- 第一步：启动并登录微信
+- 第二步：打开慢壳 AI 软件
+- 第三步：点击慢壳 AI 软件上的“绑定”按钮
 
-![alt text](./assets/software_2.jpg)
-图 1
+安装好微信客户端后，正常登录微信即可。完成后打开慢壳 AI 软件点击 “绑定微信” 按钮
 
-![alt text](./assets/confirm.png)
-图 2
-
-注：[怎么以管理员身份运行程序](https://mp.weixin.qq.com/s?__biz=Mzg5OTg5NTgwMg==&mid=2247483718&idx=1&sn=34900bacbb10ab23c9fec3d278fd437a&chksm=c04d19d3f73a90c540435b268c8f2a0c6b59ace791666c3bd0f35dba00a426495834489d5816&token=2135729166&lang=zh_CN#rd)
+![alt text](./assets/software_1.jpg)
 
 ## 第三步：创建机器人
 
-登录 [Coze 平台](https://www.coze.cn/)，创建机器人，并将机器人发布为 API
+配置也是分三步
 
-参考内容：
+- 第一步：配置 AI 模型，可选择 ChatGPT 或 Coze Bot，前者按 Token 使用量收费，**后者免费免费**
+- 第二步：微信语音配置，这项不是必须的，取决于您是否需要识别微信语音，以及 AI 语音回复，语音也是按使用量付费
+- 第三步：配置在哪些群聊或私聊上激活 AI
 
-1. [创建第一个机器人](https://www.coze.cn/docs/guides/quickstart)
-2. [发布机器人为 API](https://www.coze.cn/docs/developer_guides/preparation)
+![alt text](./assets/software_2.png)
+![alt text](./assets/software_3.png)
 
-在创建机器人的时候，在 Bot 详情页的浏览器地址栏上，bot/后面的字符串是 BotID，请记录下它，第四步会用到。参考：[怎么获得 Coze BotID](https://mp.weixin.qq.com/s?__biz=Mzg5OTg5NTgwMg==&mid=2247483724&idx=1&sn=c1cda9477c3161a9e499cfda01c80210&chksm=c04d19d9f73a90cf269dec2eae8c78ed8ea0dd2104d3190ef2d12c5cf365c1543a1d14fc0525&token=2135729166&lang=zh_CN#rd)
+以上配置中，咸鱼三条这个群使用了 Coze AI 机器人。在使用 Coze 机器人之前您需要先添加 Coze Bot，具体参考如何添加 Coze 机器人参考：[如何添加 Coze 机器人](./add_cozebot)
 
-在 [Token 管理页面](https://www.coze.cn/open/api)创建一个 Coze Token，第四步也会用到
+## 测试 AI 是否生效
 
-## 第四步：配置机器人 ID 和 Coze API token
+完成配置后，向已经激活的群聊或者私聊发消息，例如根据本文的配置，使用微信在“咸鱼三条”的群内艾特我，AI 就会回复，如下图
 
-回到慢壳 AI 软件界面，有两个配置：
-
-1. 输入 Coze Bot Id 和 Coze token（详见第三步说明）
-2. 输入希望回答的群和好友
-
-![alt text](./assets/software_2.jpg)
+![alt text](./assets/wechat_ui.png)
 
 _恭喜！！完成以上所有步骤，你就可以让好友发送消息给你，看看 TA 是不是感觉跟 ChatGPT 对上话了。而群中激活 AI 的方法则是群中任意一人@你_
 
 遇到问题参考：[FAQ](./faq)
+
+应用案例：[案例](./use_cases)
