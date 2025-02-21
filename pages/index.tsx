@@ -79,7 +79,7 @@ export default function Home() {
               <li className="mr-3">
                 <a
                   className="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
-                  href="./doc/doc"
+                  href="./doc"
                 >
                   文档
                 </a>
@@ -87,7 +87,7 @@ export default function Home() {
               <li className="mr-3">
                 <a
                   className="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
-                  href="./doc/doc"
+                  href="./doc"
                 >
                   博客
                 </a>
@@ -392,7 +392,7 @@ export default function Home() {
               <div className="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
                 <div className="flex items-center justify-center">
                   <a
-                    href="./doc/getting-started"
+                    href="./getting-started"
                     id="join-zsxq"
                     className="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"
                   >
