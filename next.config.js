@@ -1,9 +1,9 @@
-const withNextra = require('nextra')({
-  theme: 'nextra-theme-docs',
-  themeConfig: './theme.config.tsx'
-})
+const withNextra = require("nextra")({
+  theme: "nextra-theme-docs",
+  themeConfig: "./theme.config.tsx",
+});
 
 module.exports = withNextra({
-  basePath: '/doc',
+  // basePath: '/doc',
   // assetPrefix: 'https://weai.chat/doc',
-})
+});
