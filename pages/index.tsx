@@ -122,11 +122,9 @@ export default function Home() {
             </a>
           </div>
           <div className="w-full md:w-3/5 py-6 text-center">
-            <Image
+            <img
               className="w-full md:w-4/5 z-50"
               src="/landing/hero.png"
-              width={100}
-              height={100}
               alt="hero"
             />
           </div>
@@ -194,9 +192,8 @@ export default function Home() {
               <Image
                 src={softwar1}
                 className="shadow-lg w-full"
-                width={100}
-                height={100}
-                quality={100}
+                width={600}
+                height={600}
                 alt="software"
               />
             </div>
@@ -206,8 +203,8 @@ export default function Home() {
               <Image
                 src={softwar2}
                 className="shadow-lg w-full"
-                width={100}
-                height={100}
+                width={600}
+                height={600}
                 alt="software"
               />
             </div>
@@ -251,8 +248,8 @@ export default function Home() {
               <Image
                 src={coze}
                 className="shadow-lg rounded-md w-full"
-                width={100}
-                height={100}
+                width={600}
+                height={600}
                 alt="software"
               />
             </div>
@@ -380,8 +377,8 @@ export default function Home() {
                 </ul>
                 <Image
                   src={adminqr}
-                  width={180}
-                  height={180}
+                  width={200}
+                  height={200}
                   className="mx-auto mt-4"
                   alt="software"
                 />
