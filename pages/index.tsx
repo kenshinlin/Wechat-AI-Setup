@@ -1,10 +1,9 @@
-import Image from "next/image";
-// import hero from "./assets/landing/hero.png";
-import softwar1 from "./assets/landing/software_1.webp";
-import softwar2 from "./assets/landing/software_2.webp";
-import coze from "./assets/landing/coze.jpg";
-import adminqr from "./assets/landing/admin_qr.jpg";
 import Script from "next/script";
+
+const softwar1 = "/landing/software_1.webp";
+const softwar2 = "/landing/software_2.webp";
+const coze = "/landing/coze.jpg";
+const adminqr = "/landing/admin_qr.jpg";
 
 export default function Home() {
   return (
@@ -189,7 +188,7 @@ export default function Home() {
               </p>
             </div>
             <div className="w-full sm:w-1/2 p-6">
-              <Image
+              <img
                 src={softwar1}
                 className="shadow-lg w-full"
                 width={600}
@@ -200,7 +199,7 @@ export default function Home() {
           </div>
           <div className="flex flex-wrap flex-col-reverse sm:flex-row">
             <div className="w-full sm:w-1/2 p-6 mt-6">
-              <Image
+              <img
                 src={softwar2}
                 className="shadow-lg w-full"
                 width={600}
@@ -245,7 +244,7 @@ export default function Home() {
               </div>
             </div>
             <div className="w-full sm:w-1/2 p-6 mt-6">
-              <Image
+              <img
                 src={coze}
                 className="shadow-lg rounded-md w-full"
                 width={600}
@@ -375,7 +374,7 @@ export default function Home() {
                   <li className="border-b py-4">微信语音识别</li>
                   <li className="border-b py-4">支持给 AI 发送图片</li>
                 </ul>
-                <Image
+                <img
                   src={adminqr}
                   width={200}
                   height={200}
