@@ -5,5 +5,5 @@ const withNextra = require("nextra")({
 
 module.exports = withNextra({
   // basePath: '/doc',
-  // assetPrefix: 'https://weai.chat/doc',
+  assetPrefix: "",
 });
