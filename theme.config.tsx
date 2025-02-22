@@ -13,6 +13,10 @@ const config: DocsThemeConfig = {
   footer: {
     text: "慢壳 AI 专注连接微信和 AI",
   },
+  components: {
+    img: (props) => <img {...props} />,
+    Image: (props) => <img {...props} />,
+  },
   useNextSeoProps() {
     return {
       additionalLinkTags: [
