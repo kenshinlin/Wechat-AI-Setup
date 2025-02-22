@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>
+    微信 AI 连接器 | 慢壳 AI
+  </title>
+  <meta name="description" content="连接微信 和 AI，支持国内几乎所有类似 ChatGPT 的大模型，如 Kimi，豆包，义通千问、GLM 等，实现微信聊天和 AI 对话的连接" />
+  <meta name="keywords" content="Wechat, ChatGPT，微信, Kimi, coze, 扣子, AI" />
+  <meta name="author" content="" />
+  <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" />
+  <!--Replace with your tailwind.css once created-->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" />
+  <!-- Define your gradient here - use online tools to find a gradient matching your branding-->
+  <style>
+    .gradient {
+      background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
+    }
+  </style>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CNE9LL7S9N"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-CNE9LL7S9N');
+  </script>
+</head>
+
+<body class="leading-normal tracking-normal text-white gradient" style="font-family: 'Source Sans Pro', sans-serif;">
+  <!--Nav-->
+  <nav id="header" class="fixed w-full z-30 top-0 text-white">
+    <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
+      <div class="pl-4 flex items-center">
+        <a class="toggleColour text-white no-underline hover:no-underline font-bold text-2xl lg:text-4xl" href="#">
+          <!--Icon from: http://www.potlabicons.com/ -->
+          <svg class="h-8 fill-current inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512.005 512.005">
+            <rect fill="#2a2a31" x="16.539" y="425.626" width="479.767" height="50.502"
+              transform="matrix(1,0,0,1,0,0)" />
+            <path class="plane-take-off"
+              d=" M 510.7 189.151 C 505.271 168.95 484.565 156.956 464.365 162.385 L 330.156 198.367 L 155.924 35.878 L 107.19 49.008 L 211.729 230.183 L 86.232 263.767 L 36.614 224.754 L 0 234.603 L 45.957 314.27 L 65.274 347.727 L 105.802 336.869 L 240.011 300.886 L 349.726 271.469 L 483.935 235.486 C 504.134 230.057 516.129 209.352 510.7 189.151 Z " />
+          </svg>
+          慢壳 AI
+        </a>
+      </div>
+      <div class="block lg:hidden pr-4">
+        <button id="nav-toggle"
+          class="flex items-center p-1 text-pink-800 hover:text-gray-900 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+          <svg class="fill-current h-6 w-6" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <title>Menu</title>
+            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+          </svg>
+        </button>
+      </div>
+      <div
+        class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden mt-2 lg:mt-0 bg-white lg:bg-transparent text-black p-4 lg:p-0 z-20"
+        id="nav-content">
+        <ul class="list-reset lg:flex justify-end flex-1 items-center">
+          <li class="mr-3">
+            <a class="inline-block py-2 px-4 text-black font-bold no-underline" href="#">主页</a>
+          </li>
+          <li class="mr-3">
+            <a class="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
+              href="#pricing">价格</a>
+          </li>
+          <li class="mr-3">
+            <a class="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
+              href="./doc">文档</a>
+          </li>
+          <li class="mr-3">
+            <a class="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
+              href="./doc">博客</a>
+          </li>
+        </ul>
+        <button id="navAction"
+          class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+          下载
+        </button>
+      </div>
+    </div>
+    <hr class="border-b border-gray-100 opacity-25 my-0 py-0" />
+  </nav>
+  <!--Hero-->
+  <div class="pt-24">
+    <div class="py-3 px-8">
+      <h2 class="text-3xl font-bold text-center mb-8">隐私政策</h2>
+      <h3 class="text-2xl mt-8 mb-2">引言</h3>
+      <p>本隐私政策详细说明了慢壳 AI 如何收集、使用和保护用户个人信息。我们致力于保护您的隐私，并尊重您的个人信息。</p>
+      <h3 class="text-2xl mt-8 mb-2">信息收集</h3>
+      <p>我们可能会收集以下类型的信息：</p>
+      <ul>
+        <li><strong>个人信息</strong>：不收集。</li>
+        <li><strong>使用数据</strong>：访问时间，用于改进用户体验和网站性能，但<strong class="text-blue-500">不会收集问答内容</strong>。</li>
+        <li><strong>Cookies和其他跟踪技术</strong>：不收集。</li>
+      </ul>
+      <h3 class="text-2xl mt-8 mb-2">信息使用</h3>
+      <p>我们使用收集的信息来：</p>
+      <ul>
+        <li>提供和改进我们的服务。</li>
+        <li>进行市场研究和数据分析。</li>
+      </ul>
+      <h3 class="text-2xl mt-8 mb-2">信息共享</h3>
+      <p>我们不会与第三方共享您的个人信息</p>
+      <h3 class="text-2xl mt-8 mb-2">信息安全</h3>
+      <p>我们采取适当的安全措施来保护您的个人信息免受未经授权的访问和泄露。</p>
+      <h3 class="text-2xl mt-8 mb-2">用户权利</h3>
+      <p>您有权：</p>
+      <ul>
+        <li>访问您的个人信息。</li>
+        <li>要求更正或删除不准确的个人信息。</li>
+        <li>反对或限制某些个人信息的处理。</li>
+      </ul>
+      <h3 class="text-2xl mt-8 mb-2">未成年人保护</h3>
+      <p>我们不针对未成年人提供服务，也不会有意收集未成年人的个人信息。</p>
+      <h3 class="text-2xl mt-8 mb-2">更新隐私政策</h3>
+      <p>我们可能会不时更新本隐私政策。任何重大变更将在此页面上公布，并在变更生效前通知用户。</p>
+      <h3 class="text-2xl mt-8 mb-2">联系我们</h3>
+      <p>如果您对本隐私政策有任何疑问或需要进一步信息，请通过网站底部信息联系我们</p>
+    </div>
+  </div>
+  <section class="container mx-auto text-center py-6 mb-12" style="margin-top: 150px;">
+    <h2 class="w-full my-2 text-5xl font-bold leading-tight text-center text-white">
+      连接微信与类似 ChatGPT 的 AI 智能体
+    </h2>
+    <div class="w-full mb-4">
+      <div class="h-1 mx-auto bg-white w-1/6 opacity-25 my-0 py-0 rounded-t"></div>
+    </div>
+    <h3 class="my-4 text-3xl leading-tight">
+      无技术门槛，不掉线，一键将 AI 装入你的微信<br />
+      支持 Kimi、豆包、义通千问、GLM 等类 ChatGPT 大模型
+    </h3>
+    <button
+      class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+      下载慢壳 AI 软件！
+    </button>
+  </section>
+  <!--Footer-->
+  <footer class="bg-white">
+    <div class="container mx-auto px-8">
+      <div class="w-full flex flex-col md:flex-row py-6">
+        <div class="flex-1 mb-6 text-black">
+          <a class="text-pink-600 no-underline hover:no-underline font-bold text-2xl lg:text-4xl" href="#">
+            <!--Icon from: http://www.potlabicons.com/ -->
+            <svg class="h-8 fill-current inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512.005 512.005">
+              <rect fill="#2a2a31" x="16.539" y="425.626" width="479.767" height="50.502"
+                transform="matrix(1,0,0,1,0,0)" />
+              <path class="plane-take-off"
+                d=" M 510.7 189.151 C 505.271 168.95 484.565 156.956 464.365 162.385 L 330.156 198.367 L 155.924 35.878 L 107.19 49.008 L 211.729 230.183 L 86.232 263.767 L 36.614 224.754 L 0 234.603 L 45.957 314.27 L 65.274 347.727 L 105.802 336.869 L 240.011 300.886 L 349.726 271.469 L 483.935 235.486 C 504.134 230.057 516.129 209.352 510.7 189.151 Z " />
+            </svg>
+            慢壳 AI
+          </a>
+        </div>
+        <div class="flex-1">
+          <p class="uppercase text-gray-500 md:mb-6">Links</p>
+          <ul class="list-reset mb-6">
+            <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+              <a href="#" class="no-underline hover:underline text-gray-800 hover:text-pink-500">FAQ</a>
+            </li>
+            <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+              <a href="https://mp.weixin.qq.com/s/mvQLSoEPL8HqzZJbJU2VsA"
+                class="no-underline hover:underline text-gray-800 hover:text-pink-500">帮助</a>
+            </li>
+            <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+              <a href="https://mp.weixin.qq.com/s/mvQLSoEPL8HqzZJbJU2VsA" target="_blank"
+                class="no-underline hover:underline text-gray-800 hover:text-pink-500">问题反馈</a>
+            </li>
+          </ul>
+        </div>
+        <div class="flex-1">
+          <p class="uppercase text-gray-500 md:mb-6">Legal</p>
+          <ul class="list-reset mb-6">
+            <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+              <a href="#" class="no-underline hover:underline text-gray-800 hover:text-pink-500">Terms</a>
+            </li>
+            <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+              <a href="#" class="no-underline hover:underline text-gray-800 hover:text-pink-500">Privacy</a>
+            </li>
+          </ul>
+        </div>
+        <div class="flex-1">
+          <p class="uppercase text-gray-500 md:mb-6">社交媒体</p>
+          <ul class="list-reset mb-6">
+            <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+              <a href="https://mp.weixin.qq.com/s/Nsv8764KjrbLZpvk5k8cog" target="_blank"
+                class="no-underline hover:underline text-gray-800 hover:text-pink-500">微信公众号</a>
+            </li>
+            <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+              <a href="https://twitter.com/kenshilin" target="_blank"
+                class="no-underline hover:underline text-gray-800 hover:text-pink-500">Twitter</a>
+            </li>
+            <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+              <a href="https://www.xiaohongshu.com/user/profile/66686d8200000000030311d4"
+                class="no-underline hover:underline text-gray-800 hover:text-pink-500">小红书</a>
+            </li>
+          </ul>
+        </div>
+        <!-- <div class="flex-1">
+            <p class="uppercase text-gray-500 md:mb-6">Company</p>
+            <ul class="list-reset mb-6">
+              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                <a href="#" class="no-underline hover:underline text-gray-800 hover:text-pink-500">Official Blog</a>
+              </li>
+              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                <a href="#" class="no-underline hover:underline text-gray-800 hover:text-pink-500">About Us</a>
+              </li>
+              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                <a href="#" class="no-underline hover:underline text-gray-800 hover:text-pink-500">Contact</a>
+              </li>
+            </ul>
+          </div> -->
+      </div>
+    </div>
+  </footer>
+  <!-- jQuery if you need it
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  -->
+  <script>
+    var scrollpos = window.scrollY;
+    var header = document.getElementById("header");
+    var navcontent = document.getElementById("nav-content");
+    var navaction = document.getElementById("navAction");
+    var brandname = document.getElementById("brandname");
+    var toToggle = document.querySelectorAll(".toggleColour");
+
+    document.addEventListener("scroll", function () {
+      /*Apply classes for slide in bar*/
+      scrollpos = window.scrollY;
+
+      if (scrollpos > 10) {
+        header.classList.add("bg-white");
+        navaction.classList.remove("bg-white");
+        navaction.classList.add("gradient");
+        navaction.classList.remove("text-gray-800");
+        navaction.classList.add("text-white");
+        //Use to switch toggleColour colours
+        for (var i = 0; i < toToggle.length; i++) {
+          toToggle[i].classList.add("text-gray-800");
+          toToggle[i].classList.remove("text-white");
+        }
+        header.classList.add("shadow");
+        navcontent.classList.remove("bg-gray-100");
+        navcontent.classList.add("bg-white");
+      } else {
+        header.classList.remove("bg-white");
+        navaction.classList.remove("gradient");
+        navaction.classList.add("bg-white");
+        navaction.classList.remove("text-white");
+        navaction.classList.add("text-gray-800");
+        //Use to switch toggleColour colours
+        for (var i = 0; i < toToggle.length; i++) {
+          toToggle[i].classList.add("text-white");
+          toToggle[i].classList.remove("text-gray-800");
+        }
+
+        header.classList.remove("shadow");
+        navcontent.classList.remove("bg-white");
+        navcontent.classList.add("bg-gray-100");
+      }
+    });
+  </script>
+  <script>
+    /*Toggle dropdown list*/
+    /*https://gist.github.com/slavapas/593e8e50cf4cc16ac972afcbad4f70c8*/
+
+    var navMenuDiv = document.getElementById("nav-content");
+    var navMenu = document.getElementById("nav-toggle");
+
+    document.onclick = check;
+    function check(e) {
+      var target = (e && e.target) || (event && event.srcElement);
+
+      //Nav Menu
+      if (!checkParent(target, navMenuDiv)) {
+        // click NOT on the menu
+        if (checkParent(target, navMenu)) {
+          // click on the link
+          if (navMenuDiv.classList.contains("hidden")) {
+            navMenuDiv.classList.remove("hidden");
+          } else {
+            navMenuDiv.classList.add("hidden");
+          }
+        } else {
+          // click both outside link and outside menu, hide menu
+          navMenuDiv.classList.add("hidden");
+        }
+      }
+    }
+    function checkParent(t, elm) {
+      while (t.parentNode) {
+        if (t == elm) {
+          return true;
+        }
+        t = t.parentNode;
+      }
+      return false;
+    }
+  </script>
+</body>
+
+</html>

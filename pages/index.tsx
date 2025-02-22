@@ -1,5 +1,5 @@
 import Image from "next/image";
-import hero from "./assets/landing/hero.png";
+// import hero from "./assets/landing/hero.png";
 import softwar1 from "./assets/landing/software_1.webp";
 import softwar2 from "./assets/landing/software_2.webp";
 import coze from "./assets/landing/coze.jpg";
@@ -8,10 +8,7 @@ import Script from "next/script";
 
 export default function Home() {
   return (
-    <div
-      className="leading-normal tracking-normal text-white gradient"
-      style={{ fontFamily: "'Source Sans Pro', sans-serif;" }}
-    >
+    <div className="leading-normal tracking-normal text-white gradient">
       <div id="header" className="fixed w-full z-30 top-0 text-white">
         <div className="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
           <div className="pl-4 flex items-center">
@@ -127,7 +124,7 @@ export default function Home() {
           <div className="w-full md:w-3/5 py-6 text-center">
             <Image
               className="w-full md:w-4/5 z-50"
-              src={hero}
+              src="/landing/hero.png"
               width={100}
               height={100}
               alt="hero"
